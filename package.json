@@ -1,0 +1,17 @@
+{
+  "name": "hubspot-deals-api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "HubSpot Deals API Integration",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@hubspot/api-client": "^9.0.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^6.3.0",
+    "uuid": "^11.0.2"
+  }
+}

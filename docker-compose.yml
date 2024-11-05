@@ -1,0 +1,27 @@
+services:
+  deal-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: deal-service
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongo-deal-service:27017/
+      - HUBSPOT_ACCESS_TOKEN={{ HUBSPOT_ACCESS_TOKEN }}
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src:/app/src
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    container_name: mongo-deal-service
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
